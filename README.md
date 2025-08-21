@@ -185,3 +185,35 @@ _helpers.tpl ─┘
               v
         Helm registra release (miweb)
 
+# Uso de Library Chart con Frontend y Backend
+
+```mermaid
+flowchart TD
+    subgraph LibraryChart["Library Chart: my-lib"]
+        HL[_helpers.tpl]
+    end
+
+    subgraph FrontendChart["Chart: frontend (Nginx)"]
+        FD_templates[templates/deployment.yaml <br> templates/service.yaml]
+        FD_values[values.yaml]
+    end
+
+    subgraph BackendChart["Chart: backend (Tomcat)"]
+        BD_templates[templates/deployment.yaml <br> templates/service.yaml]
+        BD_values[values.yaml]
+    end
+
+    subgraph Kubernetes["Cluster Kubernetes"]
+        FE_Deployment[Deployment Nginx]
+        FE_Service[Service Nginx]
+        BE_Deployment[Deployment Tomcat]
+        BE_Service[Service Tomcat]
+    end
+
+    HL --> FD_templates
+    HL --> BD_templates
+
+    FD_templates --> FE_Deployment
+    FD_templates --> FE_Service
+    BD_templates --> BE_Deployment
+    BD_templates --> BE_Service

@@ -172,3 +172,15 @@ Este diagrama muestra el flujo completo de Helm, desde un chart hasta los recurs
 | - Historia / revisiones    |
 +-----------------------------+
 
+## 4️⃣ Resumen visual de relaciones
+values.yaml ──┐
+              │
+_templates/ ──>│  Helm renderiza templates con valores
+_helpers.tpl ─┘
+              │
+              v
+        YAML final ──> Kubernetes → Deployment, Service, Ingress, etc.
+              │
+              v
+        Helm registra release (miweb)
+

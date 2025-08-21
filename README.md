@@ -35,6 +35,33 @@ helm ls --all-namespaces
 
 
 # Cheat Sheet - Helm Básico
+# Resumen de Helm
+
+## 1️⃣ Qué es Helm
+
+Helm es un **gestor de paquetes para Kubernetes**, que permite:
+
+- Definir aplicaciones como **charts** (plantillas de Kubernetes).  
+- Instalar, actualizar y desinstalar aplicaciones de forma sencilla.  
+- Reutilizar configuraciones con valores dinámicos (`values.yaml`).  
+- Manejar dependencias y versiones de aplicaciones.  
+
+En otras palabras, Helm funciona como **el “apt/yum” de Kubernetes**, pero para aplicaciones en clusters.
+
+---
+
+## 2️⃣ Cómo funciona Helm
+
+1. **Charts:** Plantillas de recursos de Kubernetes (`Deployment`, `Service`, `Ingress`, etc.) con variables.  
+2. **Releases:** Instancias desplegadas de un chart en tu cluster. Cada `install` crea un release.  
+3. **Valores (`values.yaml`):** Permiten personalizar la configuración de un chart sin tocar los templates.  
+4. **Helm templates:** Renderiza YAML final de Kubernetes antes de aplicar (`helm template`).  
+5. **Helm commands:** Facilitan instalar, actualizar, listar, desinstalar y depurar releases.
+
+Flujo típico:
+
+```text
+chart + values.yaml → helm install → release → Kubernetes resources
 
 Este documento contiene los comandos básicos de Helm para trabajar con charts y releases en Kubernetes.
 

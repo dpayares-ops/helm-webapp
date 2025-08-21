@@ -171,7 +171,7 @@ Este diagrama muestra el flujo completo de Helm, desde un chart hasta los recurs
 | - Namespace: default       |
 | - Historia / revisiones    |
 +-----------------------------+
-
+---
 ## 4️⃣ Resumen visual de relaciones
 values.yaml ──┐
               │

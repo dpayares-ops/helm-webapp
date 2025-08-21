@@ -173,6 +173,7 @@ Este diagrama muestra el flujo completo de Helm, desde un chart hasta los recurs
 +-----------------------------+
 ```
 ## 4️⃣ Resumen visual de relaciones
+```text
 values.yaml ──┐
               │
 _templates/ ──>│  Helm renderiza templates con valores

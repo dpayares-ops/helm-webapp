@@ -185,6 +185,42 @@ _helpers.tpl ─┘
               v
         Helm registra release (miweb)
 ```
+
+flowchart TD
+    A[Chart: nginx-ex] --> B[Renderizado de templates con values.yaml]
+    B --> C[YAML final de Kubernetes]
+    C --> D[Recursos en el cluster]
+    D --> E[Release registrado en Helm]
+
+    subgraph Chart Files
+        A1[Chart.yaml]
+        A2[values.yaml]
+        A3[templates/]
+        A4[_helpers.tpl]
+        A5[charts/]
+        A6[.helmignore]
+    end
+
+    A1 --> A
+    A2 --> A
+    A3 --> A
+    A4 --> A
+    A5 --> A
+    A6 --> A
+
+    subgraph Kubernetes Resources
+        D1[Deployment]
+        D2[Service]
+        D3[Ingress]
+        D4[ConfigMap / Secret]
+    end
+
+    D --> D1
+    D --> D2
+    D --> D3
+    D --> D4
+
+```
 # Uso de Library Chart con Frontend y Backend
 
 ```mermaid

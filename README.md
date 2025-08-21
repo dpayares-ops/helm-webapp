@@ -60,7 +60,7 @@ En otras palabras, Helm funciona como **el “apt/yum” de Kubernetes**, pero p
 
 Flujo típico:
 
-```text
+```
 chart + values.yaml → helm install → release → Kubernetes resources
 
 Este documento contiene los comandos básicos de Helm para trabajar con charts y releases en Kubernetes.

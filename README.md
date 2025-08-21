@@ -185,7 +185,7 @@ _helpers.tpl ─┘
               v
         Helm registra release (miweb)
 ```
-
+```mermaid
 flowchart TD
     A[Chart: nginx-ex] --> B[Renderizado de templates con values.yaml]
     B --> C[YAML final de Kubernetes]

@@ -223,6 +223,22 @@ flowchart TD
 
 ```
 # Uso de Library Chart con Frontend y Backend
+Library Charts en Helm
+1️⃣ Qué son
+
+Una Library Chart es un tipo especial de chart en Helm que no se despliega directamente en Kubernetes.
+
+Su propósito es proveer plantillas, funciones y utilidades reutilizables a otros charts.
+
+A diferencia de los charts de aplicación (type: application), no crea recursos por sí mismo como Deployment o Service.
+
+2️⃣ Para qué se usan
+
+Centralizar lógica común: Por ejemplo, generar nombres consistentes, labels, annotations, o snippets de YAML que se repiten en varios charts.
+
+Evitar duplicación: Si tenés varios charts que necesitan los mismos templates, podés ponerlos en una Library Chart y luego incluirla como dependencia.
+
+Facilitar mantenimiento: Si cambias algo en la Library Chart, todos los charts que la usan se benefician
 
 ```mermaid
 flowchart TD

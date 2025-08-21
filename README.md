@@ -128,4 +128,47 @@ Este documento contiene los comandos básicos de Helm para trabajar con charts y
 - NodePorts, hostPorts o MetalLB son útiles para exponer servicios en clusters locales.  
 
 ---
+# Cómo funciona Helm - Diagrama de flujo
+
+Este diagrama muestra el flujo completo de Helm, desde un chart hasta los recursos aplicados en Kubernetes.
+
+---
+
+## 1️⃣ Flujo general de Helm
+
+```text
++----------------+
+|  Chart (nginx) |
+|----------------|
+| Chart.yaml     |
+| values.yaml    |
+| templates/     |
+| _helpers.tpl   |
++----------------+
+        |
+        | helm install / upgrade
+        v
++-----------------------------+
+| Renderizado de templates    |
+| con los valores de values.yaml |
++-----------------------------+
+        |
+        | YAML final de Kubernetes
+        v
++-----------------------------+
+| Recursos en el cluster       |
+| - Deployment                |
+| - Service                   |
+| - Ingress                   |
+| - ConfigMap / Secret        |
++-----------------------------+
+        |
+        | Helm tracks release
+        v
++-----------------------------+
+| Release en Helm             |
+| - Nombre: miweb            |
+| - Namespace: default       |
+| - Historia / revisiones    |
++-----------------------------+
 

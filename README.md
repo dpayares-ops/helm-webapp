@@ -184,7 +184,7 @@ _helpers.tpl ─┘
               │
               v
         Helm registra release (miweb)
-
+```
 # Uso de Library Chart con Frontend y Backend
 
 ```mermaid

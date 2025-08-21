@@ -185,6 +185,7 @@ _helpers.tpl ─┘
               v
         Helm registra release (miweb)
 ```
+## 5️⃣ Flujo visual de Helm
 ```mermaid
 flowchart TD
     A[Chart: nginx-ex] --> B[Renderizado de templates con values.yaml]
